@@ -1,0 +1,6 @@
+Fancybox 1.2
+=============
+
+Bugfixes:
+
+* Make sure image didn't disappear

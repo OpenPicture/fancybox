@@ -1,2 +1,4 @@
-# fancybox
-Fancybox for Ossn newsfeed 2.x
+Fancybox
+==========
+
+Open images in newsfeed into fancybox
