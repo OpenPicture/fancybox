@@ -10,8 +10,8 @@
  */
 
 function fancybox_init() {
-    ossn_extend_view('js/opensource.socialnetwork', 'components/fancybox/js/fancybox.init');
-    ossn_extend_view('css/ossn.default', 'components/fancybox/css/fancybox.init');
+    ossn_extend_view('ossn/js/head', 'js/fancybox.init');
+    ossn_extend_view('css/ossn.default', 'css/fancybox.init');
     
     ossn_extend_view('ossn/site/head', 'fancybox');
 }
