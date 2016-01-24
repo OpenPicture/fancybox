@@ -1,9 +1,9 @@
   $(document).ready(function(){	    
-		$(".activity-item-container .description img").fancybox({
+		$(".ossn-wall-item .post-contents img").fancybox({
 			'titleShow'     : false,
             top: '75px',  
             afterClose: function(){
-  			 	 $(".activity-item-container .description img").show();
+  			 	 $(".ossn-wall-item .post-contents img").show();
 			},        
 		});
 	});		
