@@ -1,15 +1,12 @@
 <?php
-
 /**
- * Fancybox 2.0
+ * Open Source Social Network
  *
- * @package   Fancybox
- * @author    Open Social Website Core Team <info@informatikon.com>
- * @author    Rafael Amorim <amorim@rafaelamorim.com.br>
- * @copyright 2014 iNFORMATIKON TECHNOLOGIES
- * @copyright 2021 Rafael Amorim
- * @license   General Public Licence http://www.opensource-socialnetwork.org/licence
- * @link      http://www.opensource-socialnetwork.org/licence
+ * @package   Open Source Social Network
+ * @author    Open Social Website Core Team <info@openteknik.com>
+ * @copyright (C) OpenTeknik LLC
+ * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
+ * @link      https://www.opensource-socialnetwork.org/
  */
 /*
  * EXPERIMENTAL: TRY AT YOUR OWN RISK. 
@@ -19,18 +16,17 @@
  * fancybox imagebox navigator. 
  * 
  * But I'll keep to other person improve this code. Maybe is just a single piece in somewhere :-)
+ * Taking the work from Rafael, $arsalan  after changing the below value to false you must flush cache of OSSN.
  * 
  */
 define('__FANCYBOX_FANCY_IN_ALBUM_PHOTOS__', true);
 
 function fancybox_init() {
-    ossn_extend_view('ossn/js/head', 'js/fancybox.init');
-    
+    ossn_extend_view('js/ossn.site', 'js/fancybox.init');
     ossn_extend_view('ossn/site/head', 'fancybox');
 }
 
 function fancybox() {
-    
     $fancybox = ossn_html_css(array(
         'href' => "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"
     ));
