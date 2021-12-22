@@ -1,3 +1,11 @@
+Fancybox 2.0
+=============
+
+* Fancybox open after pagination load
+* Using fancybox v.4, instead v.2
+* Added language support
+* Add option to show or not fancybox in photo albums
+
 Fancybox 1.5
 =============
 
