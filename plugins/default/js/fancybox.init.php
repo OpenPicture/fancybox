@@ -60,7 +60,8 @@ function com_fancybox_set_attr_albumphoto_wall() {
         $('.ossn-wall-item .ossn-photos-wall img').each(function() {
             $(this).attr('data-fancybox', 'gallery');
             var urlImage = $(this).attr('src').replace("size=album", "size=view");
-            $(this).attr('data-src', urlImage);
+            var idGroup = $(this).closest('.ossn-wall-item').attr('id');
+            $(this).attr('data-src', urlImage).attr('data-fancybox',idGroup);
         });
     }
 }
