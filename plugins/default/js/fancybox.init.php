@@ -77,7 +77,7 @@ function com_fancybox_set_attr_comment_item(){
         $(".user-activity .comments-item .comment-contents img").each(function(){
             $(this).attr('data-fancybox', 'gallery');
             var urlImageComment = $(this).attr('src').replace("comment/image", "comment-image");
-            var idGroupComment = $(this).closest('.comment-contents').attr('id');
+            var idGroupComment = $(this).closest('.comments-item').attr('id');
             $(this).attr('data-src', urlImageComment).attr('data-fancybox', idGroupComment);
         });
     }
