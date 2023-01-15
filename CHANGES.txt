@@ -1,3 +1,13 @@
+Fancybox 2.3
+=============
+
+* Open images in comment section 
+
+Fancybox 2.2
+=============
+
+* Album images show in grouped mode 
+
 Fancybox 2.0
 =============
 

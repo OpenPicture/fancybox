@@ -36,6 +36,7 @@ function com_fancybox_init() {
         }
         com_fancybox_set_attr();
         com_fancybox_set_attr_albumphoto_wall();
+        com_fancybox_set_attr_comment_item();
 
         Fancybox.bind("[data-fancybox]", {});
         Fancybox.bind("#gallery a", {
@@ -44,11 +45,16 @@ function com_fancybox_init() {
     });
     $(document).ajaxComplete(function() {
         com_fancybox_set_attr();
+        com_fancybox_set_attr_comment_item();
     });
 }
 function com_fancybox_set_attr() {
     $(".ossn-wall-item .post-contents img").each(function() {
-        console.log($(this).attr('data-fancybox'));
+        if ($(this).attr('data-fancybox') == undefined) {
+            $(this).attr('data-fancybox', '');
+        }
+    });
+    $(".user-activity .comments-item .comment-contents img").each(function(){
         if ($(this).attr('data-fancybox') == undefined) {
             $(this).attr('data-fancybox', '');
         }
@@ -60,7 +66,19 @@ function com_fancybox_set_attr_albumphoto_wall() {
         $('.ossn-wall-item .ossn-photos-wall img').each(function() {
             $(this).attr('data-fancybox', 'gallery');
             var urlImage = $(this).attr('src').replace("size=album", "size=view");
-            $(this).attr('data-src', urlImage);
+            var idGroup = $(this).closest('.ossn-wall-item').attr('id');
+            $(this).attr('data-src', urlImage).attr('data-fancybox',idGroup);
+        });
+    }
+}
+
+function com_fancybox_set_attr_comment_item(){
+    if ($('.user-activity .comments-item .comment-contents img').length > 0) {
+        $(".user-activity .comments-item .comment-contents img").each(function(){
+            $(this).attr('data-fancybox', 'gallery');
+            var urlImageComment = $(this).attr('src').replace("comment/image", "comment-image");
+            var idGroupComment = $(this).closest('.comments-item').attr('id');
+            $(this).attr('data-src', urlImageComment).attr('data-fancybox', idGroupComment);
         });
     }
 }
