@@ -72,15 +72,14 @@ function com_fancybox_set_attr_albumphoto_wall() {
     }
 }
 
-function com_fancybox_set_attr_comment_item(){
-    if ($('.user-activity .comments-item .comment-contents img').length > 0) {
-        $(".user-activity .comments-item .comment-contents img").each(function(){
-            $(this).attr('data-fancybox', 'gallery');
-            var urlImageComment = $(this).attr('src').replace("comment/image", "comment-image");
+function com_fancybox_set_attr_comment_item() {
+    $(".user-activity .comments-item .comment-contents img").each(function() {
+        if ($(this).attr('data-fancybox') === undefined) {
             var idGroupComment = $(this).closest('.comments-item').attr('id');
-            $(this).attr('data-src', urlImageComment).attr('data-fancybox', idGroupComment);
-        });
-    }
+            $(this).attr('data-fancybox', idGroupComment)
+                   .attr('data-src', $(this).attr('src')); // Use 'src' directly
+        }
+    });
 }
 
 function com_fancybox_init_albums() {
